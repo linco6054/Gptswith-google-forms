@@ -25,7 +25,7 @@ from django.contrib.auth import views as auth_views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('back/' ,include('gforms.urls')),
+    path('back/' ,include('gforms.urls', namespace='gforms')),
     path('' ,include('front.urls')),
 ]
 
