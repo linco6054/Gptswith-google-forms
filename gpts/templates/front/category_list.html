@@ -62,7 +62,7 @@
                                         <td>{{product.category_status}}</td>
                                        
                                          <td>
-                                           <a href=""> <button class="btn btn-info">View</button></a>
+                                           <a href="{% url 'gforms:category_detail' pk=product.pk %}"> <button class="btn btn-info">View</button></a>
                                         </td> 
                                       </tr>
                                        {% endfor %}

@@ -1,0 +1,33 @@
+{% extends 'userinterfacedesign/base.html' %}
+{% block content %}
+
+{% if user.is_authenticated %}
+<div>
+<div id="viewmail" class="tab-pane fade in animated zoomInDown shadow-reset custom-inbox-message">
+  <div class="view-mail-wrap ">
+    <div class="mail-title">
+      <h2 class='text-center'>{{category.category_name}} Details</h2>
+      <div class="view-mail-action">
+        <a href="#"><i class="fa "></i> Cancel</a>
+        <a class="compose-draft-bt" href="{% url 'gforms:category_update' pk=category.pk %}"><i class="fa "></i> Edit</a>
+      
+      </div>
+    </div>
+
+    <p> {{category.id}} <p>
+    <p> Category Name : {{category.category_name}}</p>
+    <p> Category Secrate Key : {{category.category_secrate_key}}</p>
+    <p> Created By : {{category.created_by}}</p>
+    <p> Google form Link : {{category.google_form_link}}</p>
+    <p> Category Description : {{category.category_description}}</p>
+    <p> Category Status : {{category.category_status}}</p>
+    
+
+
+
+      {% endif %}
+</div>
+</div>
+</div>
+
+      {% endblock content %}

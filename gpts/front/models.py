@@ -1,7 +1,6 @@
 from django.db import models
 import datetime
-from django.contrib.auth.models import User
-# Create your models here.
+from gforms.models import User , school
 
 class period (models.Model):
     input_date=models.DateField(auto_now_add=True, editable=False)
@@ -25,6 +24,15 @@ class category(models.Model):
     category_description= models.TextField(default='Please answer all the questions in this category')
     category_status=models.BooleanField(default=False)
     
-    
+    def __str__(self):
+        return self.category_name
 
+class champions (models.Model):
+    input_date=models.DateField(auto_now_add=True, editable=False)
+    year_won = models.DateField()
+    category_won= models.ForeignKey(category, on_delete=models.CASCADE)
+    school_won= models.ForeignKey(school, on_delete=models.CASCADE)
+    
+    
+    
     

@@ -67,6 +67,7 @@ class categoryUpdateView(LoginRequiredMixin, UpdateView):
     model = category
     form_class = categoryForm
     template_name_suffix = '_update_form'
+    success_url = reverse_lazy('gforms:category_list')
 
 
 class categoryListView(LoginRequiredMixin, ListView):
