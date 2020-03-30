@@ -33,6 +33,8 @@ class champions (models.Model):
     category_won= models.ForeignKey(category, on_delete=models.CASCADE)
     school_won= models.ForeignKey(school, on_delete=models.CASCADE)
     
+
+    
     
     
     
